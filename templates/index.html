@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Statistics Dashboard</title>
+  </head>
+  <body>
+    <h1>롯데 자이언츠 선수 통계 시각화</h1>
+
+    <form method="post">
+      <label for="player_name">선수명:</label>
+      <input type="text" id="player_name" name="player_name" required />
+      <button type="submit">검색</button>
+    </form>
+
+    <div>{% if graph_html %} {{ graph_html | safe }} {% endif %}</div>
+
+    <p>{% if player_name %}선수명: {{ player_name }}{% endif %}</p>
+  </body>
+</html>
